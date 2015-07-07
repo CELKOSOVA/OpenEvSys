@@ -5,11 +5,11 @@
         <div class="alert alert-error">
 
             <h3><?php echo _t('DO_YOU_WANT_TO_DELETE_THE_SELECTED_ELEMENTS__') ?></h3>
-            <form class="form-horizontal"  action="<?php get_url('person', 'subformat_delete', null, array('subformat' => $subformat_name)) ?>" method="post">
+            <form class="form-horizontal"  action="<?php get_url($_GET['mod'], 'subformat_delete', null, array('subformat' => $subformat_name)) ?>" method="post">
                 <br />
                 <center>
                     <button type='submit' class='btn btn-grey' name='yes' ><i class="icon-trash"></i> <?php echo _t('DELETE') ?></button>
-                    <a href="<?php get_url('person', 'subformat_list', null, array('subformat' => $subformat_name)) ?>" class='btn' name='no' >
+                    <a href="<?php get_url($_GET['mod'], 'subformat_list', null, array('subformat' => $subformat_name)) ?>" class='btn' name='no' >
                         <i class="icon-remove-circle"></i> <?php echo _t('CANCEL') ?>
                     </a>
 
@@ -19,7 +19,7 @@
                 <?php } ?>
             </form>
         </div>
-    <form class="form-horizontal"  action="<?php get_url('person','subformat_list', null, array('subformat' => $subformat_name))?>" method="post">
+    <form class="form-horizontal"  action="<?php get_url($_GET['mod'],'subformat_list', null, array('subformat' => $subformat_name))?>" method="post">
     <table class="table table-bordered table-striped table-hover">
       <thead>
         <tr>

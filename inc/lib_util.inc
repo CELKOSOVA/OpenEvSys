@@ -918,7 +918,7 @@ function makeLinksClickable($text){
 function getAllFormats(){
     include_once APPROOT . 'mod/admin/entities.php';
     $entities = new Entities();
-    return $entities->select_options();
+    return $entities->get_list();
 }
 
 function getActiveFormats(){

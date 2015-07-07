@@ -1,4 +1,6 @@
 <?php
+
+include_once APPROOT . 'inc/subformats/SubformatsModel.php';
 /**
  * shnModule is the main module class and all the modules should extend form
  * this.

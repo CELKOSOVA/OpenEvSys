@@ -200,10 +200,24 @@ if (in_array($module, array("events", "person", "docu", "analysis", "home"))
     global $global;
     global $conf;
     $locale = $conf['locale'];
-    $sql = "SELECT * FROM data_dict WHERE field_type = 'subformat' AND entity = '" . $module . "' AND visible_view = 'y'";
+
+    switch ($module) {
+        case 'events':
+            $entity = 'event';
+            break;
+        case 'docu':
+            $entity = 'supporting_docs_meta';
+            break;
+        default:
+            $entity = $module;
+            break;
+    }
+
+    $sql = "SELECT * FROM data_dict WHERE field_type = 'subformat' AND entity = '" . $entity . "' AND visible_view = 'y'";
     $browse = new Browse();
 
     $subformats = $browse->ExecuteQuery($sql);
+    
     foreach($subformats as $subformat) {
 
       $field_number = $subformat['field_number'];
